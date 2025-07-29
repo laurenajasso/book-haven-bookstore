@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book Haven Bookstore - About Us</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-left">
+      <a href="index.html"><img src="assets/logo.png" alt="Book Haven Bookstore Logo" class="logo" /></a>
+    </div>
+    <div class="header-center">
+      <h1>Book Haven Bookstore</h1>
+    </div>
+    <nav class="header-right">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html" class="active">About Us</a></li>
+        <li><a href="community.html">Community</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main content -->
+  <main>
+    <section class="business-info">
+      <h2>About Book Haven Bookstore</h2>
+      <p>Located in the heart of town, Book Haven offers a curated selection of books from local and international authors. We take pride in fostering a welcoming environment for readers of all ages.</p>
+
+      <h3>Business Hours</h3>
+      <table aria-label="Business hours" class="hours-table">
+        <thead>
+          <tr><th>Day</th><th>Hours</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Monday - Friday</td><td>9:00 AM - 8:00 PM</td></tr>
+          <tr><td>Saturday</td><td>10:00 AM - 6:00 PM</td></tr>
+          <tr><td>Sunday</td><td>12:00 PM - 5:00 PM</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="contact-form-section">
+      <h2>Contact Us / Custom Orders</h2>
+      <form id="contact-form" onsubmit="submitContactForm(event)" aria-label="Contact form for feedback and custom orders">
+        <label for="name">Name<span aria-hidden="true">*</span>:</label><br />
+        <input type="text" id="name" name="name" required /><br />
+
+        <label for="email">Email<span aria-hidden="true">*</span>:</label><br />
+        <input type="email" id="email" name="email" required /><br />
+
+        <label for="phone">Phone:</label><br />
+        <input type="tel" id="phone" name="phone" /><br />
+
+        <label for="address">Address:</label><br />
+        <input type="text" id="address" name="address" /><br />
+
+        <label for="message">Feedback or Custom Order Details<span aria-hidden="true">*</span>:</label><br />
+        <textarea id="message" name="message" rows="4" required></textarea><br />
+
+        <input type="checkbox" id="customOrder" name="customOrder" />
+        <label for="customOrder">This is a custom order request</label><br /><br />
+
+        <button type="submit">Submit</button>
+        <button type="button" onclick="clearContactForm(document.getElementById('contact-form'))" class="clear-btn">Clear Form</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-left">
+      <form id="subscribe-form">
+        <label for="email-footer">Subscribe to our newsletter:</label><br />
+        <input type="email" id="email-footer" name="email" placeholder="Enter your email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+    <div class="footer-right">
+      <div class="social-links">
+        <a href="#" aria-label="Facebook" class="social-icon">FB</a>
+        <a href="#" aria-label="Twitter" class="social-icon">TW</a>
+        <a href="#" aria-label="Instagram" class="social-icon">IG</a>
+      </div>
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="community.html">Community</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>

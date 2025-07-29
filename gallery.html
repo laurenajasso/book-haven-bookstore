@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book Haven Bookstore - Gallery</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-left">
+      <a href="index.html"><img src="assets/logo.png" alt="Book Haven Bookstore Logo" class="logo" /></a>
+    </div>
+    <div class="header-center">
+      <h1>Book Haven Bookstore</h1>
+    </div>
+    <nav class="header-right">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="community.html">Community</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main content -->
+  <main>
+    <button id="view-cart-btn" onclick="showCartModal()" aria-label="View Shopping Cart">View Cart</button>
+
+    <table class="gallery-table" aria-label="Books available for purchase">
+      <thead>
+        <tr>
+          <th>Cover</th>
+          <th>Title & Description</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><img src="assets/book1.jpg" alt="Cover of 'The Great Adventure'" class="book-cover" /></td>
+          <td>
+            <strong>The Great Adventure</strong><br />
+            A thrilling journey through uncharted lands, perfect for adventure lovers.
+          </td>
+          <td>
+            <button onclick="addToCart('The Great Adventure')" aria-label="Add The Great Adventure to cart">Add to Cart</button>
+          </td>
+        </tr>
+        <tr>
+          <td><img src="assets/book2.jpg" alt="Cover of 'Mysteries of the Mind'" class="book-cover" /></td>
+          <td>
+            <strong>Mysteries of the Mind</strong><br />
+            Explore the depths of human psychology with this insightful read.
+          </td>
+          <td>
+            <button onclick="addToCart('Mysteries of the Mind')" aria-label="Add Mysteries of the Mind to cart">Add to Cart</button>
+          </td>
+        </tr>
+        <tr>
+          <td><img src="assets/book3.jpg" alt="Cover of 'Cooking Local'" class="book-cover" /></td>
+          <td>
+            <strong>Cooking Local</strong><br />
+            Discover delicious recipes sourced from local farmers and artisans.
+          </td>
+          <td>
+            <button onclick="addToCart('Cooking Local')" aria-label="Add Cooking Local to cart">Add to Cart</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-describedby="cart-description" hidden>
+      <div class="modal-content">
+        <button id="cart-close" aria-label="Close Cart">&times;</button>
+        <h2 id="cart-title">Your Shopping Cart</h2>
+        <ul id="cart-items" aria-live="polite" aria-atomic="true">
+          <!-- Cart items populated by JS -->
+        </ul>
+        <div class="modal-buttons">
+          <button id="clear-cart-btn">Clear Cart</button>
+          <button id="process-order-btn">Process Order</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-left">
+      <form id="subscribe-form">
+        <label for="email">Subscribe to our newsletter:</label><br />
+        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+    <div class="footer-right">
+      <div class="social-links">
+        <a href="#" aria-label="Facebook" class="social-icon">FB</a>
+        <a href="#" aria-label="Twitter" class="social-icon">TW</a>
+        <a href="#" aria-label="Instagram" class="social-icon">IG</a>
+      </div>
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="community.html">Community</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/scripts.js"></script>
+  <script>
+    // Initialize modal listeners on load
+    document.addEventListener('DOMContentLoaded', setupCartModalListeners);
+  </script>
+</body>
+</html>
